@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { connectDatabase, mongoUri } from './config/database';
 import { Activity, LeaderboardEntry, Team, User, Workout } from './models';
 
@@ -9,6 +10,7 @@ const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
   : `http://localhost:${port}`;
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
