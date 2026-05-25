@@ -12,7 +12,7 @@ const apiBaseUrl = codespaceName
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', apiBaseUrl });
+  res.json({ status: 'ok', service: 'octofit-tracker-api', apiBaseUrl });
 });
 
 app.get('/api/users/', async (_req, res) => {

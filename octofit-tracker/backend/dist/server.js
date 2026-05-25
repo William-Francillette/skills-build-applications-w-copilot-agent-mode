@@ -15,7 +15,7 @@ const apiBaseUrl = codespaceName
     : `http://localhost:${port}`;
 app.use(express_1.default.json());
 app.get('/api/health', (_req, res) => {
-    res.json({ status: 'ok', apiBaseUrl });
+    res.json({ status: 'ok', service: 'octofit-tracker-api', apiBaseUrl });
 });
 app.get('/api/users/', async (_req, res) => {
     const users = await models_1.User.find().sort({ name: 1 });
